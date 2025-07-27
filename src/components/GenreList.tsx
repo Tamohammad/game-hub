@@ -1,14 +1,11 @@
-import { useEffect, useState } from "react";
-import apiClient from "../services/api-client";
-import { CanceledError } from "axios";
 import useGenres from "../hooks/useGanres";
 
 const GenreList = () => {
-  const { genres } = useGenres();
+  const { data } = useGenres();
 
   return (
     <ul>
-      {genres.map((genre) => (
+      {data.map((genre) => (
         <li key={genre.id}>{genre.name}</li>
       ))}
     </ul>
